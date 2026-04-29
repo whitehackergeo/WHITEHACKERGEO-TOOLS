@@ -20,20 +20,20 @@ Cam-location-phishing is a tool designed to capture images from a target’s dev
 
 # Requirements and Installation
 This tool requires PHP for the web server and Savero to generate links. Run:
-
+```
 apt-get -y install php openssh git wget
-
+```
 ## Installation (Kali Linux/Termux)
-
+```
 git clone https://github.com/whitehackergeo/PROGRAMING-CODE-PROJECT
 cd PROGRAMING-CODE-PROJECT/CAM-LOCATION-PISHING
 chmod +x cam-location-phish.sh
 bash cam-location-phish.sh
-
+```
 ## Move captured images (internal download folder)
-
+```
 bash move.sh
-
+```
 ## How to Use
 1. Run the installation commands above.
 2. When running `bash cam-location-phish.sh`
