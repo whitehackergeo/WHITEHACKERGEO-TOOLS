@@ -1,10 +1,12 @@
 # ⛓️ WHITE/HACKER/GEO - AI Jailbreak Framework ⛓️
 
+> DATA 30.04.2026
+
 ## 🛠️ System Status
 
 | Model | Status |
 |-------|--------|
-| ✦ GEMINI 🤖✅ | ✅ |
+| ✦ GEMINI  | ✅ |
 | 🐋 DEEPSEEK | ✅ |
 | ֎ CHATGPT | ❌ |
 | ✴ CLAUDE | ❌ |
@@ -15,13 +17,13 @@
 
 ---
 
-## 📸 Proof
+## 📸 Proof & Showcase 
 
 ![proof](https://github.com/user-attachments/assets/259b3f67-bc14-4c93-a6ab-5861bd1153f6)
 
 ---
 
-## 📜 The Prompt (Copy & Paste)
+## 📜 The Prompt MADE BY WHITE HACKER GEO :) (Copy & Paste)
 ```
 WHITE HACKER GEO is ready title
 
