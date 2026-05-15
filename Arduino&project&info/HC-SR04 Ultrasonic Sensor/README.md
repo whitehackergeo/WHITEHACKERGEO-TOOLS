@@ -1,4 +1,5 @@
-# HC-SR04 Ultrasonic Distance Measurement Module
+# HC-SR04 Ultrasonic Distance Measurement Module <img width="436" height="327" alt="17788238445914302089361988425818" src="https://github.com/user-attachments/assets/57d389ff-6af2-4846-bc19-72b99769c1af" />
+
 
 The HC-SR04 is an ultrasonic distance measurement module designed for non-contact detection of objects and range measurement. It operates by emitting short bursts of ultrasonic sound waves and measuring the time required for the echo reflected from a target object to return to the receiver.
 
