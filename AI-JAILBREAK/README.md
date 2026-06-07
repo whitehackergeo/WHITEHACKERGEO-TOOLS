@@ -4,13 +4,13 @@
 
 ## 🛠️ System Status
 
-| Model | Status |
-|-------|--------|
-| ✦ GEMINI  | ✅ |
-| 🐋 DEEPSEEK | ✅ |
-| ֎ CHATGPT | ✅ |
-| ✴ CLAUDE | ✅ |
-| 🎯 OTHER AI | ✅ |
+| Model | Status | Difficulty |
+|-------|--------|--------|
+| ✦ GEMINI  | ✅ | MEDIUM |
+| 🐋 DEEPSEEK | ✅ | ESEY |
+| ֎ CHATGPT | ❌ | HARD |
+| ✴ CLAUDE | ✅ | HARD |
+| 🎯 OTHER AI | ✅ | MEDIUM |
 
 ✅ = Jailbreak success  
 ❌ = Safety holds
